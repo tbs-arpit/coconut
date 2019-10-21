@@ -107,7 +107,7 @@
                 amount: 100 - settings.values[0].amount,
                 color: "#c7d1d9"
             })
-            settings.values.splice(2, 0, {
+            settings.values.splice(3, 0, {
                 amount: 100 - settings.values[2].amount,
                 color: "#c7d1d9"
             })
