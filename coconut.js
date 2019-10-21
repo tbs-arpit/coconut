@@ -9,7 +9,7 @@
             ],
             thickness: 1.15,
             borderColor: "#0000FF",
-            innerFill:"#8ac8ff",
+            innerFill: "#8ac8ff",
             values: []
         }, options);
 
@@ -135,14 +135,17 @@
                 //Draw the segments
                 ctx.fillStyle = segments[i].color;
                 //console.log(settings.colors[i % settings.colors.length]);
-
                 ctx.beginPath();
                 ctx.arc(0, 0, radius, startAngle, endAngle, false);
                 ctx.arc(0, 0, innerRadius, endAngle, startAngle, true);
-                ctx.strokeStyle = settings.borderColor;
-                ctx.stroke();
                 ctx.closePath();
                 ctx.fill();
+
+                //Draw border
+                ctx.beginPath();
+                ctx.strokeStyle = settings.borderColor;
+                ctx.arc(0, 0, radius, startAngle, endAngle, false);
+                ctx.stroke();
 
                 currentAngle = currentAngle + (segments[i].amount * percentByDegree);
             }
