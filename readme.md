@@ -5,9 +5,11 @@ A jQuery plugin to show a information in circle
 
 This is a library which does this 
 
-![image](https://user-images.githubusercontent.com/41741151/67071944-6ea75700-f1a1-11e9-9089-6a25b415299d.png)
+![image](https://user-images.githubusercontent.com/41741151/67190276-4de33980-f40d-11e9-8d8f-15823f0a03c5.png)
 
-everything you see in above image is configurable. except the circle😜
+Trust me it looks way nicer when you implement.
+
+Everything you see in above image is configurable. except the circle😜
 
 
 ## How to use it?
@@ -22,15 +24,17 @@ $('#selector').coconut({
         color: "#001f3f"
     },
     {
-        amount: 30,
+        amount: 100,
         color: "#b58484"
     }],
+    borderColor:"#0000FF",
+    innerFill:"#8ac8ff",
     centerIconSrc: {
         url: "./PiggyBank.png",
         sizePortion: 2
     },
     //centerSideValue: 5
-    centerValue: "99+"
+    centerValue:"99+"
 });
 ```
 
@@ -42,6 +46,8 @@ Here are the all configs and what they do
 | values | object | two objects with values and it's colors. will be drawn from bottom center of the circle
 | centerIconSrc | object | URL of the center image and portion of that image in circle for example if your circle is 500x500 and portion is 2 then center image will be 250.
 | centerValue | string | number or a string which will be shown on top of image
+| borderColor | string (hex) | Color of the border around the circle
+| innerFill | string (hex) | Inner color of the circle
 
 ## Got an issue?
 

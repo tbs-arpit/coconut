@@ -8,6 +8,8 @@
                 '#b58484'
             ],
             thickness: 1.15,
+            borderColor: "#0000FF",
+            innerFill:"#8ac8ff",
             values: []
         }, options);
 
@@ -119,7 +121,12 @@
 
             ctx.translate(xCenter, yCenter);
             //Turn the chart around so the segments start from 12 o'clock
-            ctx.rotate(90 * degToRad);
+            ctx.rotate(-90 * degToRad);
+
+            ctx.beginPath();
+            ctx.arc(0, 0, innerRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = settings.innerFill;
+            ctx.fill();
 
             for (i = 0; i < segments.length; i++) {
                 startAngle = currentAngle * degToRad;
@@ -132,6 +139,8 @@
                 ctx.beginPath();
                 ctx.arc(0, 0, radius, startAngle, endAngle, false);
                 ctx.arc(0, 0, innerRadius, endAngle, startAngle, true);
+                ctx.strokeStyle = settings.borderColor;
+                ctx.stroke();
                 ctx.closePath();
                 ctx.fill();
 
