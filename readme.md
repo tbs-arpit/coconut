@@ -32,5 +32,5 @@ $('#coconut').coconut({
 
 ## Got an issue?
 
-If you have any issues feel free to contact me on skype or raise an issue here on github
+If you have any issues feel free to contact me on skype or raise an issue [here on github](https://github.com/tbs-arpit/coconut/issues/new)
 
