@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coconut demo</title>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- uncomment following line if you don't want to use jQuery as $ -->
+    <!-- <script>jQuery.noConflict();</script> -->
+    <script src="coconut.js"></script>
+    <script>
+        $(function () {
+            $('#selector').coconut({
+                thickness: 1.15,
+                values: [{
+                    amount: 10,
+                    color: "#001f3f"
+                },
+                {
+                    amount: 30,
+                    color: "#b58484"
+                }],
+                centerIconSrc: "//secure.fbstatic.com/images/Empowr/blue-icons/icon-thumbs-up.svg",
+                centerValue: 5
+            });
+        });
+    </script>
+
+</head>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #selector {
+        height: 200px;
+        width: 200px;
+        position: relative;
+    }
+
+    .coconut-image {
+        position: absolute;
+        left: 50%;
+        TOP: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .coconut-image span {
+        font-size: 60px;
+        font-family: sans-serif;
+    }
+</style>
+
+<body>
+    <div id="selector">
+    </div>
+</body>
+
+</html>
