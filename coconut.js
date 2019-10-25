@@ -33,7 +33,15 @@
 
 
 
+
+
         return this.each(function () {
+
+            this.createDiv = function () {
+                var centerDiv = $("<div />");
+                centerDiv.addClass("coconut-image");
+                return centerDiv;
+            }
 
             if ($(this).height() <= 0) {
                 console.warn("%c 🚨Div doesn't have height", "font-size:x-large");
@@ -45,18 +53,26 @@
             //create a canvas inside a div with same height and width
             var canvas = $("<canvas height=" + $(this).height() + " width=" + $(this).width() + " />");
             $(this).append(canvas);
-            var centerDiv = $("<div />");
-            centerDiv.addClass("coconut-image");
+            var centerDiv = this.createDiv();
             if (settings.centerIconSrc) {
-                var image = $("<img src=" + settings.centerIconSrc + " width=" + $(this).width() / 4 + " />");
+                var image = $("<img src=" + settings.centerIconSrc.url + " width=" + $(this).width() / settings.centerIconSrc.sizePortion + " />");
                 centerDiv.append(image);
             }
-            if (settings.centerValue) {
+            if (settings.centerSideValue) {
                 var span = $("<span/>");
-                span.html(settings.centerValue);
+                span.html(settings.centerSideValue);
                 centerDiv.append(span);
             }
             $(this).append(centerDiv);
+
+            var anotherCenterDiv = this.createDiv();
+            var centerValue = $("<span />");
+            centerValue.addClass("small");
+            if (settings.centerValue) {
+                centerValue.html(settings.centerValue);
+            }
+            anotherCenterDiv.append(centerValue);
+            $(this).append(anotherCenterDiv);
 
 
 
@@ -111,7 +127,7 @@
 
                 //Draw the segments
                 ctx.fillStyle = segments[i].color;
-                console.log(settings.colors[i % settings.colors.length]);
+                //console.log(settings.colors[i % settings.colors.length]);
 
                 ctx.beginPath();
                 ctx.arc(0, 0, radius, startAngle, endAngle, false);

@@ -22,8 +22,12 @@
                     amount: 30,
                     color: "#b58484"
                 }],
-                centerIconSrc: "//secure.fbstatic.com/images/Empowr/blue-icons/icon-thumbs-up.svg",
-                centerValue: 5
+                centerIconSrc: {
+                    url: "./PiggyBank.png",
+                    sizePortion: 2
+                },
+                //centerSideValue: 5
+                centerValue:"99+"
             });
         });
     </script>
@@ -52,7 +56,10 @@
 
     .coconut-image span {
         font-size: 60px;
-        font-family: sans-serif;
+    }
+    .coconut-image span.small {
+        font-size: 30px;
+        color: white;
     }
 </style>
 
